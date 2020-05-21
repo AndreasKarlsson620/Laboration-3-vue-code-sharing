@@ -1,28 +1,42 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<div>
+	<h2>
+		Vue - coding snippets
+	</h2>
+	<addsnippet />
+	<latestsnippets />
+	<removesnippet />
+</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+import addsnippet from './components/addsnippet'
+import latestsnippets from './components/latestsnippets'
+import removesnippet from './components/removesnippet'
+
+export default
+{
+	name: 'App',
+	components:
+	{
+		"addsnippet":addsnippet,
+		"latestsnippets":latestsnippets,
+		"removesnippet":removesnippet
+	},
+	data: () =>
+	({
+		showmenu: true,
+		showaddsnippet: false,
+		showlatestsnippets: false,
+		showremovesnippet: false
+	}),
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+h2
+{
+	text-align:center;
 }
 </style>
